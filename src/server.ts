@@ -33,7 +33,7 @@ app.use(
 app.use("/api", apiRoutes);
 
 // Health check endpoint
-app.get("/health", (req: Request, res: Response) => {
+app.get("/health", (_req: Request, res: Response) => {
   res.json({
     status: "OK",
     message: "DevInsight AI Backend is running",
@@ -42,7 +42,7 @@ app.get("/health", (req: Request, res: Response) => {
 });
 
 // Root endpoint
-app.get("/", (req: Request, res: Response) => {
+app.get("/", (_req: Request, res: Response) => {
   res.json({
     name: "DevInsight AI Backend",
     version: "1.0.0",
@@ -63,7 +63,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 // 404 handler
-app.use((req: Request, res: Response) => {
+app.use((_req: Request, res: Response) => {
   res.status(404).json({
     success: false,
     error: "Endpoint not found",
@@ -71,7 +71,7 @@ app.use((req: Request, res: Response) => {
 });
 
 // Error handling middleware
-app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   console.error("❌ Error:", err);
 
   res.status(500).json({
