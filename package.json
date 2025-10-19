@@ -28,6 +28,7 @@
     "@genkit-ai/flow": "^0.5.17",
     "@genkit-ai/googleai": "^1.21.0",
     "@prisma/client": "^6.17.1",
+    "@upstash/redis": "^1.35.6",
     "adm-zip": "^0.5.16",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
