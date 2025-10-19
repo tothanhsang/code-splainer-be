@@ -90,8 +90,21 @@ npx genkit start  # http://localhost:4000
 | Can't reach database | `pg_isready`, `createdb devinsight_ai` |
 | Prisma errors | `pnpm prisma:generate && pnpm prisma:migrate` |
 | Port in use | `lsof -i :3001` và kill process |
+| Redis max retries error | Kiểm tra `UPSTASH_REDIS_REST_URL` và `UPSTASH_REDIS_REST_TOKEN` trong `.env` |
 
 Chi tiết xem [docs/03-getting-started.md](./docs/03-getting-started.md)
+
+### Redis Testing
+
+```bash
+# Test basic Redis connection
+npx tsx test-redis.ts
+
+# Test full Redis integration
+npx tsx test-redis-integration.ts
+```
+
+See [REDIS_SETUP.md](./REDIS_SETUP.md) for complete Redis configuration guide.
 
 ## 🚀 Deployment
 

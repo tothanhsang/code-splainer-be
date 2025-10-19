@@ -13,7 +13,10 @@
     "prisma:migrate": "prisma migrate dev",
     "prisma:migrate:deploy": "prisma migrate deploy",
     "prisma:reset": "prisma migrate reset",
-    "prisma:studio": "prisma studio"
+    "prisma:studio": "prisma studio",
+    "test:redis": "tsx test-redis.ts",
+    "test:redis:integration": "tsx test-redis-integration.ts",
+    "test:all": "pnpm test:redis && pnpm test:redis:integration"
   },
   "keywords": [
     "ai",
