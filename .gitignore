@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.env
+uploads/
+*.log
+.DS_Store
+.pnpm-store/
+
+# Genkit
+.genkit
+
+# AI
+.claude/
+.serena/

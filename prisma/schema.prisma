@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Model để lưu lịch sử phân tích FSD - Advanced version
+model SpecAnalysis {
+  id               String   @id @default(uuid())
+  fileName         String
+  fileSize         Int
+  analysisFocus    String?  @db.Text
+  // Store full analysis as JSON (matches SpecAnalysisSchema)
+  analysisResult   Json?    // Nullable for backward compatibility
+  // Legacy fields for backward compatibility (deprecated)
+  overview         String?  @db.Text
+  userStories      Json?
+  features         Json?
+  notes            Json?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@map("spec_analyses")
+}

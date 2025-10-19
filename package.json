@@ -1,0 +1,53 @@
+{
+  "name": "code-splainer-be",
+  "version": "1.0.0",
+  "description": "DevInsight AI - Backend API for AI Spec Analyzer and Code Documenter",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "genkit": "npx genkit start -- tsx start-genkit.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "start:prod": "prisma migrate deploy && node dist/server.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:migrate:deploy": "prisma migrate deploy",
+    "prisma:reset": "prisma migrate reset",
+    "prisma:studio": "prisma studio"
+  },
+  "keywords": [
+    "ai",
+    "code-analysis",
+    "documentation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@genkit-ai/ai": "^1.21.0",
+    "@genkit-ai/core": "^1.21.0",
+    "@genkit-ai/flow": "^0.5.17",
+    "@genkit-ai/googleai": "^1.21.0",
+    "@prisma/client": "^6.17.1",
+    "adm-zip": "^0.5.16",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-fileupload": "^1.5.2",
+    "genkit": "^1.21.0",
+    "ioredis": "^5.8.1",
+    "pdf-parse": "^2.3.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.7",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/express-fileupload": "^1.5.1",
+    "@types/node": "^24.7.2",
+    "@types/pdf-parse": "^1.1.5",
+    "genkit-cli": "^1.21.0",
+    "prisma": "^6.17.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}
